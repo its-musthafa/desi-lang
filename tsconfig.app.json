@@ -1,0 +1,29 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./build", // Specify the output directory
+    "composite": true, // Required for project references
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo", // Path for incremental build information
+    "target": "ES2020", // ECMAScript target version
+    "useDefineForClassFields": true, // Enable `define` for class fields
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // Include required libraries
+    "module": "ESNext", // Specify module code generation
+    "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts)
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Use bundler-style module resolution
+    "resolveJsonModule": true, // Allow importing .json files
+    "isolatedModules": true, // Ensures each file can be transpiled independently
+    "moduleDetection": "force", // Force module detection mode
+    "noEmit": false, // Ensure this is set to false to allow emitting files
+    "jsx": "react-jsx", // JSX code generation
+
+    /* Linting */
+    "strict": true, // Enable all strict type-checking options
+    "noUnusedLocals": true, // Report errors on unused local variables
+    "noUnusedParameters": true, // Report errors on unused parameters
+    "noFallthroughCasesInSwitch": true // Report errors on fallthrough cases in switch statements
+  },
+  "include": ["src"], // Include source files
+  "exclude": ["node_modules", "build"] // Exclude directories
+}
